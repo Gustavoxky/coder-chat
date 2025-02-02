@@ -12,9 +12,6 @@ class ChatInput(BaseModel):
 
 @app.post("/chat")
 async def chat(input: ChatInput):
-    """
-    Endpoint para gerar uma resposta com base no prompt fornecido.
-    """
     try:
         response = generate_response(
             prompt=input.prompt,
