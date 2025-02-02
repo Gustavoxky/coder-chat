@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from app.chatbot import generate_response
+from chatbot import generate_response
 
 app = FastAPI()
 
