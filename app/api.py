@@ -4,7 +4,6 @@ from chatbot import generate_response
 
 app = FastAPI()
 
-# Modelo de entrada da API
 class ChatInput(BaseModel):
     prompt: str
     max_length: int = 128
@@ -20,5 +19,5 @@ async def chat(input: ChatInput):
         )
         return {"response": response}
     except Exception as e:
-        print(f"Erro no processamento: {e}")  # Log no console
+        print(f"Erro no processamento: {e}")
         raise HTTPException(status_code=500, detail="Erro interno no servidor.")
